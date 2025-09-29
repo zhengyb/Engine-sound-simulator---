@@ -21,14 +21,14 @@ class Engine:
         Note: all sounds used will be concatenated to suit engine run speed.
         Make sure there's excess audio data available in the buffer.
 
-        idle_rpm: engine speed at idle
-        limiter_rpm: engine speed at rev limiter
-        strokes: number of strokes in full engine cycle, must be 2 or 4 (new: 3 for rotary)
-        cylinders: number of cylinders in engine
-        timing: array where each element is the number of crankshaft degrees that cylinder should wait
-          to fire after the previous cylinder fires. See engine_factory.py for examples
-        fire_snd: sound engine should make when a cylinder fires
-        between_fire_snd: sound engine should make between cylinders firing
+        idle_rpm: 怠速时的发动机转速（RPM）
+        limiter_rpm: 转速限制器的发动机转速上限（RPM）
+        strokes: 一个完整发动机循环的冲程数，必须为 2 或 4（转子可为 3）
+        cylinders: 发动机的缸数
+        timing: 数组；每个元素为当前汽缸相对“上一缸点火”需等待的曲轴角度（度）。
+          示例参见 engine_factory.py
+        fire_snd: 汽缸点火时的声音缓冲
+        between_fire_snd: 各缸点火之间的声音缓冲（通常为静音/背景）
         '''
         # Audio library will request a specific number of samples, but we can't simulate partial engine
         # revolutions, so we buffer whatever we have left over. We start with some zero samples to stop

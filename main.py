@@ -88,8 +88,9 @@ def main():
                     pass
             else:
                 print("未发现可用的音频输出设备，将尝试继续初始化（可能静音）。")
-        except Exception:
+        except Exception as e:
             # 列表/选择失败不阻塞后续流程，让 AudioDevice 自行回退选择
+            print(f"{e}")
             pass
         audio_device = AudioDevice()
         try:
