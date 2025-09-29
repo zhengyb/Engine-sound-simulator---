@@ -75,6 +75,7 @@ def inline_6():
         fire_snd=_fire_snd,
         between_fire_snd=synth.silence(1)
     )
+
 def v_8_LR():
     return Engine(
         idle_rpm=800,

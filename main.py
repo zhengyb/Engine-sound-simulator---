@@ -12,15 +12,17 @@ def main():
     # engine = engine_factory.v_8_LS()
     # engine = engine_factory.inline_5_crossplane()
     # engine = engine_factory.inline_6()
-    engine = engine_factory.boxer_4_crossplane_custom([1, 1, 0, 0])  # (rando := random.randrange(360)))
+    # engine = engine_factory.boxer_4_crossplane_custom([1, 1, 0, 0])  # (rando := random.randrange(360)))
+
+    engine = engine_factory.inline_4_1_spark_plug_disconnected()
+    engine = engine_factory.inline_4()
+    engine = engine_factory.boxer_4_half()
+    # engine = engine_factory.random()
+    engine = engine_factory.fake_rotary_2rotor()
+    # engine = engine_factory.V_12()
+
     if os.environ.get("ENGINE_DEBUG", "0") == "1":
         print("[debug] engine constructed")
-    # engine = engine_factory.inline_4_1_spark_plug_disconnected()
-    # engine = engine_factory.inline_4()
-    # engine = engine_factory.boxer_4_half()
-    # engine = engine_factory.random()
-    #engine = engine_factory.fake_rotary_2rotor()
-    #engine = engine_factory.V_12()
 
     stream: Optional[object] = None
     audio_device = None
